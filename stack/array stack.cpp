@@ -1,6 +1,6 @@
-#include <iostream>
-using namespace std;
-
+//#include <iostream>
+//using namespace std;
+//
 //
 //class parent {
 //private:
@@ -49,50 +49,4 @@ using namespace std;
 //};
 //
 //
-
-
-
-class Stack {
-public:
-	Stack(int s = 100) {
-		size = s;
-		storage = new int[size];
-		top = 0;
-
-	}
-	//bool IsEmpt{ return top == 0; };
-	bool IsFull() { return top == size; };
-	bool Push(int el);
-	int Pop();
-	int Top();
-private:
-	int* storage;
-	int top;
-	int size;
-
-};
 //
-//
-//bool Stack::Push(int el) {
-//	if (IsFull()) return false;
-//	storage[top++] = el;
-//	return true;
-//}
-//int Stack::Pop() {
-//	if (IsEmpty()) return 0;
-//	return storage[--top];
-//}
-//int Stack::Top() {
-//	if (IsEmpty()) return 0;
-//	return storage[top - 1];
-//}
-
-
-int main() {
-
-	cout << "git È®ÀÎ";
-
-
-
-	return 0;
-};
