@@ -5,6 +5,6 @@ using namespace std;
 class array {
 
 
-
+	int okman;
 
 };
