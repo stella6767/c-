@@ -1,52 +1,50 @@
-//#include <iostream>
-//using namespace std;
-//
-//
-//class parent {
-//private:
-//	int x=0; //맴버변수 초기화 안 하면 에러 뜸
-//protected:
-//	int y=0;
-//public:
-//	int z = 0;
-//};
-//
-//
-//class child1:public parent {
-//
-//};
-//
-//class child2 :protected parent {
-//
-//};
-//
-//class child3 :private parent {
-//
-//};
-//
-//
-//int main() {
-//
-//	child1 a;
-//	//child2 b;
-//	//child3 c;
-//	
-//	//cout << a.x << endl;
-//	//cout << a.y << endl;//다른 함수(main())에서 사용할 때는 public으로 선언된 변수 외엔 사용할 수 없습니다.
-//	cout << a.z << endl;
-//
-//	//cout << b.x << endl;
-//	//cout << b.y << endl;
-//	//cout << b.z << endl;
-//
-//	//cout << c.x << endl;
-//	//cout << c.y << endl;
-//	//cout << c.z << endl;
-//
-//
-//
-//	return 0;
-//};
-//
-//
-//
+#include <iostream>
+using namespace std;
+
+class Stack {
+public:
+    Stack(int s = 100) {
+        size = s;
+        storage = new int[size]; //100개의 변수 저장고
+        top = 0; //현재까지 저장된 값의 수
+    }
+    bool IsEmpty() { return top == 0; };
+    bool IsFull() { return top == size; };
+    bool Push(int el);
+    int Pop();
+    int Top();
+private:
+    int* storage;
+    int top;
+    int size;
+};
+
+bool Stack::Push(int el) {
+    if (IsFull()) return false;
+    storage[top++] = el; //후위연산자
+    return true;
+}
+
+int Stack::Pop() {
+    if (IsEmpty()) return 0;
+    return storage[--top]; //전위연산자 활용하여 코드를 작성!
+}
+
+int Stack::Top() {
+    if (IsEmpty()) return 0;
+    return storage[top - 1];
+}
+
+int main() {
+    Stack* q = new Stack();
+    q->Push(2);
+    q->Push(5);
+    q->Push(3);
+
+    if (!q->IsEmpty())
+        q->Pop();
+
+    cout << q->Top() << endl; //마지막 값을 돌려줌
+
+    return 0;
+}

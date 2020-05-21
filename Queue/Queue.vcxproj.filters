@@ -21,13 +21,13 @@
     <ClCompile Include="circular queue.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="pointer queue.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="priority queue.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="과제.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="pointer queue.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
